@@ -18,9 +18,9 @@ void app_main(void)
     } while (count < 30);
 
     pms5003_zero_values(&particles);                            // reset values
-    // ESP_LOGI(__func__, "Stop measuring, put sensor to sleep for 30sec");
-    // pms5003_sleep();
-    // vTaskDelay(30000 / portTICK_PERIOD_MS);
+    ESP_LOGI(__func__, "Stop measuring, put sensor to sleep for 30sec");
+    pms5003_sleep();
+    vTaskDelay(30000 / portTICK_PERIOD_MS);
     ESP_LOGI(__func__, "Enable active mode....");
     pms5003_wakeup();
     vTaskDelay(300 / portTICK_PERIOD_MS);

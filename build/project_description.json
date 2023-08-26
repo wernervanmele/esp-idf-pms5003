@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "pms5003",
-    "project_version":    "1",
+    "project_version":    "393caa6-dirty",
     "project_path":       "/Users/wvanmele/ESP_Workspaces/examples/pms5003",
     "idf_path":           "/Users/wvanmele/esp/esp-idf",
     "build_dir":          "/Users/wvanmele/ESP_Workspaces/examples/pms5003/build",
