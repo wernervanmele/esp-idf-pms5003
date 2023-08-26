@@ -1,0 +1,23 @@
+menu "PMS5003 Setup"
+    config PMS5003_SENSOR_ENABLED
+        bool "Enable the Particle Manner Sensor (requires UART)"
+
+    if PMS5003_SENSOR_ENABLED
+        config UART_PORT_NUMBER
+            int "Which UART port to use ?"
+            default 2
+
+        config UART_GPIO_RX
+            int "GPIO for UART RX"
+            default 17
+
+        config UART_GPIO_TX
+            int "GPIO for UART TX"
+            default 16
+            
+        config PMS5003_UART_BAUDRATE
+            int "PMS5003 Works at 9600 baud"
+            default 9600
+    endif
+    
+endmenu

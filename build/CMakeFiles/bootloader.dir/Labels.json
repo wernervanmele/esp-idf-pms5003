@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/wvanmele/ESP_Workspaces/examples/pms5003/build/CMakeFiles/bootloader"
+		},
+		{
+			"file" : "/Users/wvanmele/ESP_Workspaces/examples/pms5003/build/CMakeFiles/bootloader.rule"
+		},
+		{
+			"file" : "/Users/wvanmele/ESP_Workspaces/examples/pms5003/build/CMakeFiles/bootloader-complete.rule"
+		},
+		{
+			"file" : "/Users/wvanmele/ESP_Workspaces/examples/pms5003/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+		},
+		{
+			"file" : "/Users/wvanmele/ESP_Workspaces/examples/pms5003/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+		},
+		{
+			"file" : "/Users/wvanmele/ESP_Workspaces/examples/pms5003/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+		},
+		{
+			"file" : "/Users/wvanmele/ESP_Workspaces/examples/pms5003/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+		},
+		{
+			"file" : "/Users/wvanmele/ESP_Workspaces/examples/pms5003/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+		},
+		{
+			"file" : "/Users/wvanmele/ESP_Workspaces/examples/pms5003/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+		},
+		{
+			"file" : "/Users/wvanmele/ESP_Workspaces/examples/pms5003/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bootloader"
+		],
+		"name" : "bootloader"
+	}
+}
