@@ -178,18 +178,18 @@ void pms5003_passive_read(pms5003_data_t *values)
         if (_calc_checksum == _ret_checksum) {
             values->pm_std_1_0 = makeWord(rxbuf[4], rxbuf[5]);
             values->pm_std_2_5 = makeWord(rxbuf[6], rxbuf[7]);
-            values->pm_std_10 = makeWord(rxbuf[8], rxbuf[9]);
+            values->pm_std_10  = makeWord(rxbuf[8], rxbuf[9]);
 
             values->pm_env_1_0 = makeWord(rxbuf[10], rxbuf[11]);
             values->pm_env_2_5 = makeWord(rxbuf[12], rxbuf[13]);
-            values->pm_env_10 = makeWord(rxbuf[14], rxbuf[15]);
+            values->pm_env_10  = makeWord(rxbuf[14], rxbuf[15]);
 
             values->pm_part_0_3um = makeWord(rxbuf[16], rxbuf[17]);
             values->pm_part_0_5um = makeWord(rxbuf[18], rxbuf[19]);
             values->pm_part_1_0um = makeWord(rxbuf[20], rxbuf[21]);
             values->pm_part_2_5um = makeWord(rxbuf[22], rxbuf[23]);
             values->pm_part_5_0um = makeWord(rxbuf[24], rxbuf[25]);
-            values->pm_part_10um = makeWord(rxbuf[26], rxbuf[27]);
+            values->pm_part_10um  = makeWord(rxbuf[26], rxbuf[27]);
             // 28, 29 reserved
             // 30, 31 check
         } else {
@@ -210,13 +210,14 @@ void pms5003_active_read(pms5003_data_t *values)
 {
     static const uint8_t rxlen = 32;
     static uint8_t rxbuf[32];
+    memset(rxbuf, 0, rxlen);
 
 
     uint16_t rxbytes =  uart_read_bytes(UART_PORT_NUM, rxbuf, rxlen, pdMS_TO_TICKS(400));
     ESP_LOGD(__func__, "And received %d bytes back", rxbytes);
 
     if (rxbytes > 0) {
-        ESP_LOGD(__func__, "Bytes 1 and 2:  0x%X - 0x%X", rxbuf[0], rxbuf[1]);
+        ESP_LOGD(__func__, "Fixed bytes 1 & 2:  0x%X - 0x%X", rxbuf[0], rxbuf[1]);
         // houston we received something, might be garbage
         if ((rxbuf[0] != 0x42) && (rxbuf[1] != 0x4D)) {                          // if first byte is not eq start char 1 bail out
             uart_flush(UART_PORT_NUM);
@@ -264,7 +265,7 @@ void pms5003_active_read(pms5003_data_t *values)
 
 /**
  * @brief Print measured values
- * @param particles struct
+ * @param particles struct pms5003_data_t
  */
 void pms5003_print_values(pms5003_data_t particles)
 {
